@@ -1,0 +1,32 @@
+
+<h1>Contact Me</h1>
+
+<div class="row">
+  <div class="span6">
+    <%= form_for @message, :url => '/contact'  do |form| %>
+      <div class="field>
+        <aside class>
+          <section>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+          </section>
+    
+          <section>
+            <%= form.label :email, 'Your email' %>
+            <%= form.text_field :email %>
+          </section>
+          <section>
+            <%= form.label :subject %>
+            <%= form.text_field :subject %>
+          </section>
+    
+          <section>
+            <%= form.label :body, 'Message' %>
+            <%= form.text_area :body %>
+          </section>
+        </aside>
+      </div>
+      <%= form.submit "Send", class:"btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+
+<% if @items.any? %>
+  <ul class="projects">
+    <%= render partial: 'shared/item', collection: @items %>
+  </ul>
+  <%= will_paginate @items %>
+<% end %>

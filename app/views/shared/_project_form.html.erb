@@ -1,0 +1,32 @@
+<div class="row">
+  <%= simple_form_for @newProject do |f| %>
+    <div class="field">
+      <aside class="span4">
+        <%= f.input :avatar, :label => 'Upload Picture' do %>
+          <div class="fileupload fileupload-new" data-provides="fileupload">
+            <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+            <div>
+              <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" />
+                <%= f.file_field :avatar %>
+              </span>
+              <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+            </div>
+          </div>
+        <% end %>
+      </aside>
+      <aside class="span7">
+        <section>
+          <%= f.label :title %>
+          <%= f.text_area :title, placeholder: "Enter the project's title here..." %>
+        </section>
+        <section>
+          <div class="content">
+            <%= f.label :content %>
+            <%= f.text_area :content, placeholder: "Give a project description here..."%>
+          </div>
+        </section
+      </aside>
+    </div>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+<% end %>
