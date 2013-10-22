@@ -10,6 +10,8 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'simple_form'
 
+gem 'debugger'
+
 gem 'figaro'
 
 gem 'paperclip', '3.5.1'

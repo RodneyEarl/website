@@ -1,14 +1,10 @@
 class ProjectsController < ApplicationController
 
-  before_action :admin_user, only: [:new, :create]
+  before_action :admin_user, only: [:create]
 
   def index
     @newProject = Project.new if user_signed_in? && current_user.admin?
     @items = Project.paginate(page: params[:page])
-  end
-
-  def new
-    @newProject = Project.new
   end
 
   def create
@@ -18,7 +14,7 @@ class ProjectsController < ApplicationController
         flash[:success] = "Project created!"
         redirect_to '/projects'
       else
-        render 'projects/index'
+        redirect_to '/projects'
       end
     end
   end
@@ -32,6 +28,6 @@ class ProjectsController < ApplicationController
     # Before filters
 
     def admin_user
-      redirect_to(project_path) unless current_user.admin?
+      redirect_to('/projects') unless user_signed_in? && current_user.admin?
     end
 end

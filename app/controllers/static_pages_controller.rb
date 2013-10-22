@@ -7,7 +7,4 @@ class StaticPagesController < ApplicationController
 
   def references
   end
-
-  def contact
-  end
 end

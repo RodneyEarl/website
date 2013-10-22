@@ -6,9 +6,11 @@ class Message
 
   attr_accessor :name, :email, :subject, :body
 
-  validates :name, :email, :subject, :body, :presence => true
-  validates :email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
-  
+  validates :name, :subject, :body, :presence => true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+  validates :email, presence: true,
+                    format: { with: VALID_EMAIL_REGEX }
+
   def initialize(attributes = {})
     attributes.each do |name, value|
       send("#{name}=", value)

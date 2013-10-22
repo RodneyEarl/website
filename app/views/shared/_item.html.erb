@@ -1,19 +1,21 @@
 
 <li>
-  <aside class="span3">
-    <%= image_tag item.avatar.url(:small) %>
-  </aside>
-  <aside class="span6">
-    <section>
-      <%= item.title %>
-    </section>
-    <section>
-      <div class="content">
-        <%= item.content %>
-      </div>
-      <% if signed_in? && current_user.admin? %>
-        <%= link_to "edit", item %>
-      <% end %>
-    </section
-  </aside>
+  <div class="row">
+    <aside class="span3">
+      <%= image_tag item.avatar.url(:small) %>
+    </aside>
+    <aside class="span6">
+      <section>
+        <%= item.title %>
+      </section>
+      <section>
+        <div class="content">
+          <%= item.content %>
+        </div>
+        <% if signed_in? && current_user.admin? %>
+        <% end %>
+      </section
+    </aside>
+  </div>
 </li>
+<br />
